@@ -46,13 +46,13 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             panel1 = new Panel();
+            label4 = new Label();
             label2 = new Label();
             panel2 = new Panel();
             labUser = new Label();
             labCarRental = new Label();
             pictureBox1 = new PictureBox();
             pBoxCar = new PictureBox();
-            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -261,6 +261,17 @@
             panel1.Size = new Size(1053, 53);
             panel1.TabIndex = 26;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.MidnightBlue;
+            label4.Location = new Point(981, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(27, 34);
+            label4.TabIndex = 29;
+            label4.Text = "-";
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -321,17 +332,6 @@
             pBoxCar.TabIndex = 1;
             pBoxCar.TabStop = false;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.MidnightBlue;
-            label4.Location = new Point(981, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(27, 34);
-            label4.TabIndex = 29;
-            label4.Text = "-";
-            // 
             // AdminPAge
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -353,6 +353,7 @@
             Name = "AdminPAge";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminPage";
+            Load += AdminPAge_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();

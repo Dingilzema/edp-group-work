@@ -31,8 +31,8 @@
             label1 = new Label();
             labAvailable = new Label();
             labModel = new Label();
-            password = new TextBox();
-            username = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             button1 = new Button();
             checkBox1 = new CheckBox();
             label2 = new Label();
@@ -44,10 +44,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.MidnightBlue;
-            label1.Location = new Point(26, 20);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(37, 33);
             label1.Name = "label1";
-            label1.Size = new Size(309, 22);
+            label1.Size = new Size(458, 34);
             label1.TabIndex = 1;
             label1.Text = "Car Rental Management System";
             // 
@@ -56,10 +55,9 @@
             labAvailable.AutoSize = true;
             labAvailable.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labAvailable.ForeColor = Color.MidnightBlue;
-            labAvailable.Location = new Point(26, 104);
-            labAvailable.Margin = new Padding(2, 0, 2, 0);
+            labAvailable.Location = new Point(37, 173);
             labAvailable.Name = "labAvailable";
-            labAvailable.Size = new Size(95, 22);
+            labAvailable.Size = new Size(142, 34);
             labAvailable.TabIndex = 16;
             labAvailable.Text = "Password";
             // 
@@ -68,35 +66,32 @@
             labModel.AutoSize = true;
             labModel.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labModel.ForeColor = Color.MidnightBlue;
-            labModel.Location = new Point(26, 66);
-            labModel.Margin = new Padding(2, 0, 2, 0);
+            labModel.Location = new Point(37, 110);
             labModel.Name = "labModel";
-            labModel.Size = new Size(103, 22);
+            labModel.Size = new Size(153, 34);
             labModel.TabIndex = 17;
             labModel.Text = "UserName";
             // 
-            // password
+            // textBox2
             // 
-            password.BackColor = Color.White;
-            password.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            password.ForeColor = Color.Crimson;
-            password.Location = new Point(137, 104);
-            password.Margin = new Padding(2, 2, 2, 2);
-            password.Name = "password";
-            password.PasswordChar = '*';
-            password.Size = new Size(227, 27);
-            password.TabIndex = 18;
+            textBox2.BackColor = Color.White;
+            textBox2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.ForeColor = Color.Crimson;
+            textBox2.Location = new Point(196, 173);
+            textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
+            textBox2.Size = new Size(323, 37);
+            textBox2.TabIndex = 18;
             // 
-            // username
+            // textBox1
             // 
-            username.BackColor = Color.White;
-            username.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            username.ForeColor = Color.Crimson;
-            username.Location = new Point(137, 67);
-            username.Margin = new Padding(2, 2, 2, 2);
-            username.Name = "username";
-            username.Size = new Size(227, 27);
-            username.TabIndex = 19;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.Crimson;
+            textBox1.Location = new Point(196, 111);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(323, 37);
+            textBox1.TabIndex = 19;
             // 
             // button1
             // 
@@ -105,24 +100,21 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(137, 158);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Location = new Point(196, 264);
             button1.Name = "button1";
-            button1.Size = new Size(226, 26);
+            button1.Size = new Size(323, 43);
             button1.TabIndex = 25;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
             checkBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.ForeColor = Color.MidnightBlue;
-            checkBox1.Location = new Point(137, 134);
-            checkBox1.Margin = new Padding(2, 2, 2, 2);
+            checkBox1.Location = new Point(196, 224);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(147, 25);
+            checkBox1.Size = new Size(218, 34);
             checkBox1.TabIndex = 26;
             checkBox1.Text = "Show Password";
             checkBox1.UseVisualStyleBackColor = true;
@@ -132,10 +124,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.MidnightBlue;
-            label2.Location = new Point(390, 0);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(557, 0);
             label2.Name = "label2";
-            label2.Size = new Size(23, 23);
+            label2.Size = new Size(34, 34);
             label2.TabIndex = 27;
             label2.Text = "X";
             label2.Click += label2_Click;
@@ -145,30 +136,28 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.MidnightBlue;
-            label3.Location = new Point(362, 0);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(517, 0);
             label3.Name = "label3";
-            label3.Size = new Size(18, 23);
+            label3.Size = new Size(27, 34);
             label3.TabIndex = 27;
             label3.Text = "-";
             label3.Click += label1_Click;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(414, 223);
+            ClientSize = new Size(591, 371);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(checkBox1);
             Controls.Add(button1);
             Controls.Add(labAvailable);
             Controls.Add(labModel);
-            Controls.Add(password);
-            Controls.Add(username);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -181,8 +170,8 @@
         private Label label1;
         private Label labAvailable;
         private Label labModel;
-        private TextBox password;
-        private TextBox username;
+        private TextBox textBox2;
+        private TextBox textBox1;
         private Button button1;
         private CheckBox checkBox1;
         private Label label2;

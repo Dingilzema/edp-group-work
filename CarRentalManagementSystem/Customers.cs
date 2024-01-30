@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,13 @@ namespace CarRentalManagementSystem
     public partial class Customers : Form
     {
         SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\reald\\OneDrive\\Documents\\CarRentalManagementSystemDb.mdf;Integrated Security=True;Connect Timeout=30");
+
         public Customers()
         {
+
             InitializeComponent();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (!AreFieldsEmpty())
@@ -40,6 +44,7 @@ namespace CarRentalManagementSystem
 
         }
 
+
         private bool IsValidPhoneNumber(string phoneNumber)
         {
 
@@ -47,6 +52,8 @@ namespace CarRentalManagementSystem
 
             return Regex.IsMatch(phoneNumber, phonePattern);
         }
+
+
         private void InsertCustomerData()
         {
             try
@@ -78,6 +85,9 @@ namespace CarRentalManagementSystem
                 con.Close();
             }
         }
+
+
+
         private void LoadCustomerData()
         {
             try
@@ -109,27 +119,37 @@ namespace CarRentalManagementSystem
                 con.Close();
             }
         }
+
+
+
         private void ClearFields()
         {
             txtCustName.Text = string.Empty;
             txtAddress.Text = string.Empty;
             txtPhone.Text = string.Empty;
         }
+
         private bool AreFieldsEmpty()
         {
             return string.IsNullOrWhiteSpace(txtCustName.Text) ||
                    string.IsNullOrWhiteSpace(txtAddress.Text) ||
                    string.IsNullOrWhiteSpace(txtPhone.Text);
         }
+
+
+
+
         private void Customers_Load(object sender, EventArgs e)
         {
             LoadCustomerData();
 
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             ClearFields();
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DeleteSelectedCustomer();
@@ -244,6 +264,12 @@ namespace CarRentalManagementSystem
                 MessageBox.Show("Please select a customer from the data grid view.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+
+
+
+
+
         private void dgvCustomer_SelectionChanged_1(object sender, EventArgs e)
         {
             if (dgvCustomer.SelectedRows.Count > 0)
@@ -269,22 +295,27 @@ namespace CarRentalManagementSystem
             }
 
         }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearFields();
         }
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             UpdateSelectedCustomer();
         }
+
         private void label6_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
+
         private void label5_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void label1_Click(object sender, EventArgs e)
         {
             frmMain car = new frmMain();
@@ -298,6 +329,7 @@ namespace CarRentalManagementSystem
             rent.Show();
             this.Close();
         }
+
         private void label4_Click(object sender, EventArgs e)
         {
             Return return2 = new Return();

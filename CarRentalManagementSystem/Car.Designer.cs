@@ -37,17 +37,17 @@
             labCarRental = new Label();
             pictureBox1 = new PictureBox();
             pBoxCar = new PictureBox();
-            Reg_Number = new TextBox();
+            txtRegNo = new TextBox();
             labReg = new Label();
-            Model = new TextBox();
+            textBox1 = new TextBox();
             labModel = new Label();
-            Color = new TextBox();
+            textBox3 = new TextBox();
             labColor = new Label();
-            Brand = new ComboBox();
+            cBoxBrand = new ComboBox();
             labBrand = new Label();
             labAvailable = new Label();
-            Available = new ComboBox();
-            Price = new TextBox();
+            cBoxAvailable = new ComboBox();
+            txtPrice = new TextBox();
             labPrice = new Label();
             labCarList = new Label();
             panel3 = new Panel();
@@ -61,10 +61,10 @@
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             dataGridView1 = new DataGridView();
-            Clear_btn = new Button();
-            Delete = new Button();
-            Edit_button = new Button();
-            Add_button = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBoxCar).BeginInit();
@@ -87,18 +87,18 @@
             panel1.Controls.Add(pBoxCar);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(737, 32);
+            panel1.Size = new Size(1053, 53);
             panel1.TabIndex = 0;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(690, 0);
-            label6.Margin = new Padding(2, 0, 2, 0);
+            label6.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.MidnightBlue;
+            label6.Location = new Point(986, 0);
             label6.Name = "label6";
-            label6.Size = new Size(12, 15);
+            label6.Size = new Size(27, 34);
             label6.TabIndex = 29;
             label6.Text = "-";
             // 
@@ -106,29 +106,28 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(713, 0);
-            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.ForeColor = Color.MidnightBlue;
+            label5.Location = new Point(1019, 0);
             label5.Name = "label5";
-            label5.Size = new Size(23, 23);
+            label5.Size = new Size(34, 34);
             label5.TabIndex = 28;
             label5.Text = "X";
             // 
             // panel2
             // 
-            panel2.Location = new Point(25, 31);
-            panel2.Margin = new Padding(2);
+            panel2.Location = new Point(36, 51);
             panel2.Name = "panel2";
-            panel2.Size = new Size(684, 31);
+            panel2.Size = new Size(977, 51);
             panel2.TabIndex = 3;
             // 
             // labUser
             // 
             labUser.AutoSize = true;
             labUser.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            labUser.Location = new Point(539, 5);
-            labUser.Margin = new Padding(2, 0, 2, 0);
+            labUser.ForeColor = Color.Crimson;
+            labUser.Location = new Point(770, 9);
             labUser.Name = "labUser";
-            labUser.Size = new Size(124, 25);
+            labUser.Size = new Size(178, 39);
             labUser.TabIndex = 1;
             labUser.Text = "UserName";
             // 
@@ -136,20 +135,19 @@
             // 
             labCarRental.AutoSize = true;
             labCarRental.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labCarRental.Location = new Point(64, 5);
-            labCarRental.Margin = new Padding(2, 0, 2, 0);
+            labCarRental.ForeColor = Color.MidnightBlue;
+            labCarRental.Location = new Point(91, 9);
             labCarRental.Name = "labCarRental";
-            labCarRental.Size = new Size(309, 22);
+            labCarRental.Size = new Size(458, 34);
             labCarRental.TabIndex = 1;
             labCarRental.Text = "Car Rental Management System";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(491, 0);
-            pictureBox1.Margin = new Padding(2);
+            pictureBox1.Location = new Point(701, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(44, 32);
+            pictureBox1.Size = new Size(63, 53);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -158,91 +156,92 @@
             // 
             pBoxCar.Image = (Image)resources.GetObject("pBoxCar.Image");
             pBoxCar.Location = new Point(0, 0);
-            pBoxCar.Margin = new Padding(2);
             pBoxCar.Name = "pBoxCar";
-            pBoxCar.Size = new Size(60, 32);
+            pBoxCar.Size = new Size(85, 53);
             pBoxCar.SizeMode = PictureBoxSizeMode.Zoom;
             pBoxCar.TabIndex = 1;
             pBoxCar.TabStop = false;
             // 
-            // Reg_Number
+            // txtRegNo
             // 
-            Reg_Number.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Reg_Number.Location = new Point(41, 113);
-            Reg_Number.Margin = new Padding(2);
-            Reg_Number.Name = "Reg_Number";
-            Reg_Number.Size = new Size(144, 27);
-            Reg_Number.TabIndex = 1;
+            txtRegNo.BackColor = Color.White;
+            txtRegNo.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRegNo.ForeColor = Color.Crimson;
+            txtRegNo.Location = new Point(59, 188);
+            txtRegNo.Name = "txtRegNo";
+            txtRegNo.Size = new Size(204, 37);
+            txtRegNo.TabIndex = 1;
             // 
             // labReg
             // 
             labReg.AutoSize = true;
             labReg.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labReg.Location = new Point(41, 83);
-            labReg.Margin = new Padding(2, 0, 2, 0);
+            labReg.ForeColor = Color.Crimson;
+            labReg.Location = new Point(59, 138);
             labReg.Name = "labReg";
-            labReg.Size = new Size(126, 22);
+            labReg.Size = new Size(186, 34);
             labReg.TabIndex = 1;
             labReg.Text = "Reg Number";
             // 
-            // Model
+            // textBox1
             // 
-            Model.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Model.Location = new Point(517, 113);
-            Model.Margin = new Padding(2);
-            Model.Name = "Model";
-            Model.Size = new Size(144, 27);
-            Model.TabIndex = 1;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.Crimson;
+            textBox1.Location = new Point(739, 188);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(204, 37);
+            textBox1.TabIndex = 1;
             // 
             // labModel
             // 
             labModel.AutoSize = true;
             labModel.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labModel.Location = new Point(517, 83);
-            labModel.Margin = new Padding(2, 0, 2, 0);
+            labModel.ForeColor = Color.Crimson;
+            labModel.Location = new Point(739, 138);
             labModel.Name = "labModel";
-            labModel.Size = new Size(67, 22);
+            labModel.Size = new Size(101, 34);
             labModel.TabIndex = 1;
             labModel.Text = "Model";
             // 
-            // Color
+            // textBox3
             // 
-            Color.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Color.Location = new Point(272, 175);
-            Color.Margin = new Padding(2);
-            Color.Name = "Color";
-            Color.Size = new Size(144, 27);
-            Color.TabIndex = 1;
+            textBox3.BackColor = Color.White;
+            textBox3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.ForeColor = Color.Crimson;
+            textBox3.Location = new Point(388, 291);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(204, 37);
+            textBox3.TabIndex = 1;
             // 
             // labColor
             // 
             labColor.AutoSize = true;
             labColor.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labColor.Location = new Point(272, 145);
-            labColor.Margin = new Padding(2, 0, 2, 0);
+            labColor.ForeColor = Color.Crimson;
+            labColor.Location = new Point(388, 241);
             labColor.Name = "labColor";
-            labColor.Size = new Size(58, 22);
+            labColor.Size = new Size(88, 34);
             labColor.TabIndex = 1;
             labColor.Text = "Color";
             // 
-            // Brand
+            // cBoxBrand
             // 
-            Brand.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Brand.FormattingEnabled = true;
-            Brand.Location = new Point(272, 112);
-            Brand.Margin = new Padding(2);
-            Brand.Name = "Brand";
-            Brand.Size = new Size(144, 29);
-            Brand.TabIndex = 2;
+            cBoxBrand.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cBoxBrand.FormattingEnabled = true;
+            cBoxBrand.Location = new Point(388, 187);
+            cBoxBrand.Name = "cBoxBrand";
+            cBoxBrand.Size = new Size(204, 38);
+            cBoxBrand.TabIndex = 2;
             // 
             // labBrand
             // 
             labBrand.AutoSize = true;
             labBrand.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labBrand.Location = new Point(272, 82);
-            labBrand.Margin = new Padding(2, 0, 2, 0);
+            labBrand.ForeColor = Color.Crimson;
+            labBrand.Location = new Point(388, 137);
             labBrand.Name = "labBrand";
-            labBrand.Size = new Size(65, 22);
+            labBrand.Size = new Size(94, 34);
             labBrand.TabIndex = 1;
             labBrand.Text = "Brand";
             // 
@@ -250,40 +249,40 @@
             // 
             labAvailable.AutoSize = true;
             labAvailable.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labAvailable.Location = new Point(517, 145);
-            labAvailable.Margin = new Padding(2, 0, 2, 0);
+            labAvailable.ForeColor = Color.Crimson;
+            labAvailable.Location = new Point(739, 241);
             labAvailable.Name = "labAvailable";
-            labAvailable.Size = new Size(98, 22);
+            labAvailable.Size = new Size(147, 34);
             labAvailable.TabIndex = 1;
             labAvailable.Text = "Available";
             // 
-            // Available
+            // cBoxAvailable
             // 
-            Available.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Available.FormattingEnabled = true;
-            Available.Location = new Point(517, 175);
-            Available.Margin = new Padding(2);
-            Available.Name = "Available";
-            Available.Size = new Size(144, 29);
-            Available.TabIndex = 2;
+            cBoxAvailable.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cBoxAvailable.FormattingEnabled = true;
+            cBoxAvailable.Location = new Point(739, 291);
+            cBoxAvailable.Name = "cBoxAvailable";
+            cBoxAvailable.Size = new Size(204, 38);
+            cBoxAvailable.TabIndex = 2;
             // 
-            // Price
+            // txtPrice
             // 
-            Price.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Price.Location = new Point(41, 169);
-            Price.Margin = new Padding(2);
-            Price.Name = "Price";
-            Price.Size = new Size(144, 27);
-            Price.TabIndex = 1;
+            txtPrice.BackColor = Color.White;
+            txtPrice.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPrice.ForeColor = Color.Crimson;
+            txtPrice.Location = new Point(59, 282);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(204, 37);
+            txtPrice.TabIndex = 1;
             // 
             // labPrice
             // 
             labPrice.AutoSize = true;
             labPrice.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            labPrice.Location = new Point(41, 139);
-            labPrice.Margin = new Padding(2, 0, 2, 0);
+            labPrice.ForeColor = Color.Crimson;
+            labPrice.Location = new Point(59, 232);
             labPrice.Name = "labPrice";
-            labPrice.Size = new Size(54, 22);
+            labPrice.Size = new Size(83, 34);
             labPrice.TabIndex = 1;
             labPrice.Text = "Price";
             // 
@@ -291,10 +290,10 @@
             // 
             labCarList.AutoSize = true;
             labCarList.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            labCarList.Location = new Point(296, 254);
-            labCarList.Margin = new Padding(2, 0, 2, 0);
+            labCarList.ForeColor = Color.Crimson;
+            labCarList.Location = new Point(423, 424);
             labCarList.Name = "labCarList";
-            labCarList.Size = new Size(98, 30);
+            labCarList.Size = new Size(144, 43);
             labCarList.TabIndex = 1;
             labCarList.Text = "Car List";
             // 
@@ -310,28 +309,27 @@
             panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(pictureBox2);
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 32);
-            panel3.Margin = new Padding(2);
+            panel3.Location = new Point(0, 53);
             panel3.Name = "panel3";
-            panel3.Size = new Size(737, 43);
+            panel3.Size = new Size(1053, 72);
             panel3.TabIndex = 3;
             // 
             // panel4
             // 
-            panel4.Location = new Point(71, 24);
-            panel4.Margin = new Padding(2);
+            panel4.BackColor = Color.DarkBlue;
+            panel4.Location = new Point(101, 40);
             panel4.Name = "panel4";
-            panel4.Size = new Size(88, 3);
+            panel4.Size = new Size(125, 5);
             panel4.TabIndex = 4;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(567, 4);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.ForeColor = Color.Crimson;
+            label4.Location = new Point(810, 6);
             label4.Name = "label4";
-            label4.Size = new Size(67, 23);
+            label4.Size = new Size(100, 34);
             label4.TabIndex = 1;
             label4.Text = "Return";
             // 
@@ -339,10 +337,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(423, 5);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.ForeColor = Color.Crimson;
+            label3.Location = new Point(604, 9);
             label3.Name = "label3";
-            label3.Size = new Size(50, 23);
+            label3.Size = new Size(74, 34);
             label3.TabIndex = 1;
             label3.Text = "Rent";
             // 
@@ -350,10 +348,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(238, 4);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.ForeColor = Color.Crimson;
+            label2.Location = new Point(340, 6);
             label2.Name = "label2";
-            label2.Size = new Size(106, 23);
+            label2.Size = new Size(157, 34);
             label2.TabIndex = 1;
             label2.Text = "Customers";
             // 
@@ -361,20 +359,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(105, 2);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.ForeColor = Color.Crimson;
+            label1.Location = new Point(150, 3);
             label1.Name = "label1";
-            label1.Size = new Size(52, 23);
+            label1.Size = new Size(76, 34);
             label1.TabIndex = 1;
             label1.Text = "Cars";
             // 
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(533, 2);
-            pictureBox5.Margin = new Padding(2);
+            pictureBox5.Location = new Point(761, 3);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(37, 22);
+            pictureBox5.Size = new Size(53, 37);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 1;
             pictureBox5.TabStop = false;
@@ -382,10 +379,9 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(388, 4);
-            pictureBox4.Margin = new Padding(2);
+            pictureBox4.Location = new Point(555, 6);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(37, 22);
+            pictureBox4.Size = new Size(53, 37);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 1;
             pictureBox4.TabStop = false;
@@ -393,10 +389,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(204, 2);
-            pictureBox3.Margin = new Padding(2);
+            pictureBox3.Location = new Point(292, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(37, 22);
+            pictureBox3.Size = new Size(53, 37);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
@@ -404,100 +399,96 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(71, 0);
-            pictureBox2.Margin = new Padding(2);
+            pictureBox2.Location = new Point(101, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(37, 22);
+            pictureBox2.Size = new Size(53, 37);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(25, 282);
-            dataGridView1.Margin = new Padding(2);
+            dataGridView1.Location = new Point(36, 470);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(692, 153);
+            dataGridView1.Size = new Size(989, 255);
             dataGridView1.TabIndex = 4;
             // 
-            // Clear_btn
+            // button4
             // 
-            Clear_btn.FlatAppearance.BorderSize = 0;
-            Clear_btn.FlatStyle = FlatStyle.Flat;
-            Clear_btn.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            Clear_btn.ForeColor = SystemColors.Desktop;
-            Clear_btn.Location = new Point(474, 209);
-            Clear_btn.Margin = new Padding(2);
-            Clear_btn.Name = "Clear_btn";
-            Clear_btn.Size = new Size(79, 26);
-            Clear_btn.TabIndex = 25;
-            Clear_btn.Text = "Clear";
-            Clear_btn.UseVisualStyleBackColor = false;
-            Clear_btn.Click += button4_Click;
+            button4.BackColor = Color.Navy;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(677, 348);
+            button4.Name = "button4";
+            button4.Size = new Size(113, 43);
+            button4.TabIndex = 25;
+            button4.Text = "Clear";
+            button4.UseVisualStyleBackColor = false;
             // 
-            // Delete
+            // button3
             // 
-            Delete.FlatAppearance.BorderSize = 0;
-            Delete.FlatStyle = FlatStyle.Flat;
-            Delete.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            Delete.ForeColor = SystemColors.Desktop;
-            Delete.Location = new Point(365, 209);
-            Delete.Margin = new Padding(2);
-            Delete.Name = "Delete";
-            Delete.Size = new Size(94, 26);
-            Delete.TabIndex = 26;
-            Delete.Text = "Delete";
-            Delete.UseVisualStyleBackColor = false;
-            Delete.Click += button3_Click;
+            button3.BackColor = Color.Navy;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(521, 348);
+            button3.Name = "button3";
+            button3.Size = new Size(135, 43);
+            button3.TabIndex = 26;
+            button3.Text = "Delete";
+            button3.UseVisualStyleBackColor = false;
             // 
-            // Edit_button
+            // button2
             // 
-            Edit_button.FlatAppearance.BorderSize = 0;
-            Edit_button.FlatStyle = FlatStyle.Flat;
-            Edit_button.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            Edit_button.ForeColor = SystemColors.Desktop;
-            Edit_button.Location = new Point(272, 209);
-            Edit_button.Margin = new Padding(2);
-            Edit_button.Name = "Edit_button";
-            Edit_button.Size = new Size(79, 26);
-            Edit_button.TabIndex = 27;
-            Edit_button.Text = "Edit";
-            Edit_button.UseVisualStyleBackColor = false;
-            Edit_button.Click += button2_Click;
+            button2.BackColor = Color.Navy;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(389, 348);
+            button2.Name = "button2";
+            button2.Size = new Size(113, 43);
+            button2.TabIndex = 27;
+            button2.Text = "Edit";
+            button2.UseVisualStyleBackColor = false;
             // 
-            // Add_button
+            // button1
             // 
-            Add_button.FlatAppearance.BorderSize = 0;
-            Add_button.FlatStyle = FlatStyle.Flat;
-            Add_button.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            Add_button.ForeColor = SystemColors.Desktop;
-            Add_button.Location = new Point(172, 209);
-            Add_button.Margin = new Padding(2);
-            Add_button.Name = "Add_button";
-            Add_button.Size = new Size(79, 26);
-            Add_button.TabIndex = 28;
-            Add_button.Text = "Add";
-            Add_button.UseVisualStyleBackColor = false;
-            Add_button.Click += Add_button_Click;
+            button1.BackColor = Color.Navy;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(246, 348);
+            button1.Name = "button1";
+            button1.Size = new Size(113, 43);
+            button1.TabIndex = 28;
+            button1.Text = "Add";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // frmMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(737, 460);
-            Controls.Add(Clear_btn);
-            Controls.Add(Delete);
-            Controls.Add(Edit_button);
-            Controls.Add(Add_button);
+            ClientSize = new Size(1053, 746);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(panel3);
-            Controls.Add(Available);
-            Controls.Add(Brand);
+            Controls.Add(cBoxAvailable);
+            Controls.Add(cBoxBrand);
             Controls.Add(labColor);
             Controls.Add(labPrice);
             Controls.Add(labAvailable);
@@ -505,13 +496,12 @@
             Controls.Add(labBrand);
             Controls.Add(labCarList);
             Controls.Add(labReg);
-            Controls.Add(Price);
-            Controls.Add(Color);
-            Controls.Add(Model);
-            Controls.Add(Reg_Number);
+            Controls.Add(txtPrice);
+            Controls.Add(textBox3);
+            Controls.Add(textBox1);
+            Controls.Add(txtRegNo);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2);
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main";
@@ -537,17 +527,17 @@
         private Label labCarRental;
         private PictureBox pictureBox1;
         private Label labUser;
-        private TextBox Reg_Number;
+        private TextBox txtRegNo;
         private Label labReg;
-        private TextBox Model;
+        private TextBox textBox1;
         private Label labModel;
-        private TextBox Color;
+        private TextBox textBox3;
         private Label labColor;
-        private ComboBox Brand;
+        private ComboBox cBoxBrand;
         private Label labBrand;
         private Label labAvailable;
-        private ComboBox Available;
-        private TextBox Price;
+        private ComboBox cBoxAvailable;
+        private TextBox txtPrice;
         private Label labPrice;
         private Panel panel2;
         private Label labCarList;
@@ -562,10 +552,10 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private DataGridView dataGridView1;
-        private Button Clear_btn;
-        private Button Delete;
-        private Button Edit_button;
-        private Button Add_button;
+        private Button button4;
+        private Button button3;
+        private Button button2;
+        private Button button1;
         private Label label5;
         private Label label6;
     }
