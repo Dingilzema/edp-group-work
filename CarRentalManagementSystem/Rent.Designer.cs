@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rent));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel6 = new Panel();
             label4 = new Label();
             label3 = new Label();
@@ -38,14 +40,14 @@
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            dataGridView1 = new DataGridView();
+            dgvRent = new DataGridView();
             panel2 = new Panel();
             labUser = new Label();
             labCarRental = new Label();
             pictureBox1 = new PictureBox();
             pBoxCar = new PictureBox();
             panel3 = new Panel();
-            cBoxBrand = new ComboBox();
+            cBoxCustId = new ComboBox();
             labColor = new Label();
             labPrice = new Label();
             labAvailable = new Label();
@@ -53,22 +55,20 @@
             labBrand = new Label();
             labCarList = new Label();
             labReg = new Label();
-            textBox1 = new TextBox();
+            txtCustName = new TextBox();
             panel1 = new Panel();
-            label9 = new Label();
-            label5 = new Label();
-            comboBox1 = new ComboBox();
+            cBoxReg = new ComboBox();
             txtFees = new TextBox();
-            button4 = new Button();
-            button3 = new Button();
-            button1 = new Button();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            datRent = new DateTimePicker();
+            datReturn = new DateTimePicker();
+            btnClear = new Button();
+            btnDelete = new Button();
+            btnAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBoxCar).BeginInit();
             panel3.SuspendLayout();
@@ -167,17 +167,38 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // dataGridView1
+            // dgvRent
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(36, 448);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(993, 224);
-            dataGridView1.TabIndex = 20;
+            dgvRent.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvRent.BackgroundColor = Color.White;
+            dgvRent.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvRent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvRent.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvRent.Location = new Point(12, 448);
+            dgvRent.MultiSelect = false;
+            dgvRent.Name = "dgvRent";
+            dgvRent.ReadOnly = true;
+            dgvRent.RowHeadersWidth = 62;
+            dgvRent.RowTemplate.Height = 33;
+            dgvRent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvRent.Size = new Size(1299, 381);
+            dgvRent.TabIndex = 20;
+            dgvRent.SelectionChanged += dgvRent_SelectionChanged_1;
             // 
             // panel2
             // 
@@ -191,11 +212,11 @@
             labUser.AutoSize = true;
             labUser.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point);
             labUser.ForeColor = Color.Crimson;
-            labUser.Location = new Point(770, 9);
+            labUser.Location = new Point(1166, 9);
             labUser.Name = "labUser";
-            labUser.Size = new Size(178, 39);
+            labUser.Size = new Size(85, 39);
             labUser.TabIndex = 1;
-            labUser.Text = "UserName";
+            labUser.Text = "Staff";
             // 
             // labCarRental
             // 
@@ -211,7 +232,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(701, 0);
+            pictureBox1.Location = new Point(1097, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 53);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -242,24 +263,27 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 53);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1053, 72);
+            panel3.Size = new Size(1323, 72);
             panel3.TabIndex = 19;
             // 
-            // cBoxBrand
+            // cBoxCustId
             // 
-            cBoxBrand.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cBoxBrand.FormattingEnabled = true;
-            cBoxBrand.Location = new Point(388, 193);
-            cBoxBrand.Name = "cBoxBrand";
-            cBoxBrand.Size = new Size(292, 38);
-            cBoxBrand.TabIndex = 18;
+            cBoxCustId.DropDownHeight = 300;
+            cBoxCustId.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cBoxCustId.FormattingEnabled = true;
+            cBoxCustId.IntegralHeight = false;
+            cBoxCustId.Location = new Point(444, 195);
+            cBoxCustId.Name = "cBoxCustId";
+            cBoxCustId.Size = new Size(336, 38);
+            cBoxCustId.TabIndex = 1;
+            cBoxCustId.SelectedIndexChanged += cBoxCustId_SelectedIndexChanged_1;
             // 
             // labColor
             // 
             labColor.AutoSize = true;
             labColor.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labColor.ForeColor = Color.Crimson;
-            labColor.Location = new Point(388, 247);
+            labColor.Location = new Point(444, 249);
             labColor.Name = "labColor";
             labColor.Size = new Size(178, 34);
             labColor.TabIndex = 6;
@@ -281,7 +305,7 @@
             labAvailable.AutoSize = true;
             labAvailable.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labAvailable.ForeColor = Color.Crimson;
-            labAvailable.Location = new Point(739, 247);
+            labAvailable.Location = new Point(830, 248);
             labAvailable.Name = "labAvailable";
             labAvailable.Size = new Size(76, 34);
             labAvailable.TabIndex = 8;
@@ -292,7 +316,7 @@
             labModel.AutoSize = true;
             labModel.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labModel.ForeColor = Color.Crimson;
-            labModel.Location = new Point(739, 144);
+            labModel.Location = new Point(830, 145);
             labModel.Name = "labModel";
             labModel.Size = new Size(238, 34);
             labModel.TabIndex = 9;
@@ -303,7 +327,7 @@
             labBrand.AutoSize = true;
             labBrand.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labBrand.ForeColor = Color.Crimson;
-            labBrand.Location = new Point(388, 143);
+            labBrand.Location = new Point(444, 145);
             labBrand.Name = "labBrand";
             labBrand.Size = new Size(181, 34);
             labBrand.TabIndex = 10;
@@ -314,7 +338,7 @@
             labCarList.AutoSize = true;
             labCarList.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             labCarList.ForeColor = Color.Crimson;
-            labCarList.Location = new Point(388, 392);
+            labCarList.Location = new Point(519, 402);
             labCarList.Name = "labCarList";
             labCarList.Size = new Size(191, 43);
             labCarList.TabIndex = 11;
@@ -331,20 +355,19 @@
             labReg.TabIndex = 12;
             labReg.Text = "Reg Number";
             // 
-            // textBox1
+            // txtCustName
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.Crimson;
-            textBox1.Location = new Point(739, 194);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(238, 37);
-            textBox1.TabIndex = 15;
+            txtCustName.BackColor = Color.White;
+            txtCustName.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCustName.ForeColor = Color.Crimson;
+            txtCustName.Location = new Point(830, 195);
+            txtCustName.Name = "txtCustName";
+            txtCustName.ReadOnly = true;
+            txtCustName.Size = new Size(467, 37);
+            txtCustName.TabIndex = 2;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(labUser);
             panel1.Controls.Add(labCarRental);
@@ -353,127 +376,115 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1053, 53);
+            panel1.Size = new Size(1323, 53);
             panel1.TabIndex = 5;
             // 
-            // label9
+            // cBoxReg
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.MidnightBlue;
-            label9.Location = new Point(983, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(27, 34);
-            label9.TabIndex = 30;
-            label9.Text = "-";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.MidnightBlue;
-            label5.Location = new Point(1016, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(34, 34);
-            label5.TabIndex = 28;
-            label5.Text = "X";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(59, 194);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(287, 38);
-            comboBox1.TabIndex = 18;
+            cBoxReg.DropDownHeight = 300;
+            cBoxReg.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cBoxReg.FormattingEnabled = true;
+            cBoxReg.IntegralHeight = false;
+            cBoxReg.Location = new Point(59, 194);
+            cBoxReg.Name = "cBoxReg";
+            cBoxReg.Size = new Size(324, 38);
+            cBoxReg.TabIndex = 0;
+            cBoxReg.SelectedIndexChanged += cBoxReg_SelectedIndexChanged;
             // 
             // txtFees
             // 
             txtFees.BackColor = Color.White;
             txtFees.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtFees.ForeColor = Color.Crimson;
-            txtFees.Location = new Point(739, 297);
+            txtFees.Location = new Point(830, 298);
             txtFees.Name = "txtFees";
-            txtFees.Size = new Size(238, 37);
-            txtFees.TabIndex = 14;
+            txtFees.ReadOnly = true;
+            txtFees.Size = new Size(467, 37);
+            txtFees.TabIndex = 5;
+            txtFees.TextAlign = HorizontalAlignment.Right;
             // 
-            // button4
+            // datRent
             // 
-            button4.BackColor = Color.Navy;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(507, 346);
-            button4.Name = "button4";
-            button4.Size = new Size(113, 43);
-            button4.TabIndex = 21;
-            button4.Text = "Clear";
-            button4.UseVisualStyleBackColor = false;
+            datRent.CustomFormat = "dd MMMM yyyy";
+            datRent.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            datRent.Format = DateTimePickerFormat.Custom;
+            datRent.Location = new Point(59, 297);
+            datRent.Name = "datRent";
+            datRent.Size = new Size(324, 37);
+            datRent.TabIndex = 3;
+            datRent.ValueChanged += datRent_ValueChanged;
             // 
-            // button3
+            // datReturn
             // 
-            button3.BackColor = Color.Navy;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(401, 691);
-            button3.Name = "button3";
-            button3.Size = new Size(135, 43);
-            button3.TabIndex = 22;
-            button3.Text = "Rent";
-            button3.UseVisualStyleBackColor = true;
+            datReturn.CustomFormat = "dd MMMM yyyy";
+            datReturn.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            datReturn.Format = DateTimePickerFormat.Custom;
+            datReturn.Location = new Point(444, 294);
+            datReturn.Name = "datReturn";
+            datReturn.Size = new Size(336, 37);
+            datReturn.TabIndex = 4;
+            datReturn.ValueChanged += datRent_ValueChanged;
             // 
-            // button1
+            // btnClear
             // 
-            button1.BackColor = Color.Navy;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(370, 346);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 43);
-            button1.TabIndex = 24;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnClear.BackColor = Color.Navy;
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(735, 356);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(113, 43);
+            btnClear.TabIndex = 8;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
-            // dateTimePicker1
+            // btnDelete
             // 
-            dateTimePicker1.CustomFormat = "dd MMMM yyyy";
-            dateTimePicker1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(59, 297);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(287, 37);
-            dateTimePicker1.TabIndex = 25;
+            btnDelete.BackColor = Color.Navy;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(575, 356);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(135, 43);
+            btnDelete.TabIndex = 7;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // dateTimePicker2
+            // btnAdd
             // 
-            dateTimePicker2.CustomFormat = "dd MMMM yyyy";
-            dateTimePicker2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(388, 292);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(292, 37);
-            dateTimePicker2.TabIndex = 25;
+            btnAdd.BackColor = Color.Navy;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(444, 356);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(113, 43);
+            btnAdd.TabIndex = 6;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // Rent
             // 
+            AcceptButton = btnAdd;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1053, 746);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1323, 841);
+            Controls.Add(btnClear);
+            Controls.Add(btnDelete);
+            Controls.Add(btnAdd);
+            Controls.Add(datReturn);
+            Controls.Add(datRent);
+            Controls.Add(dgvRent);
             Controls.Add(panel3);
-            Controls.Add(comboBox1);
-            Controls.Add(cBoxBrand);
+            Controls.Add(cBoxReg);
+            Controls.Add(cBoxCustId);
             Controls.Add(labColor);
             Controls.Add(labPrice);
             Controls.Add(labAvailable);
@@ -482,17 +493,17 @@
             Controls.Add(labCarList);
             Controls.Add(labReg);
             Controls.Add(txtFees);
-            Controls.Add(textBox1);
+            Controls.Add(txtCustName);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "Rent";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Rent";
+            Load += Rent_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRent).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pBoxCar).EndInit();
             panel3.ResumeLayout(false);
@@ -514,14 +525,14 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
-        private DataGridView dataGridView1;
+        private DataGridView dgvRent;
         private Panel panel2;
         private Label labUser;
         private Label labCarRental;
         private PictureBox pictureBox1;
         private PictureBox pBoxCar;
         private Panel panel3;
-        private ComboBox cBoxBrand;
+        private ComboBox cBoxCustId;
         private Label labColor;
         private Label labPrice;
         private Label labAvailable;
@@ -529,16 +540,14 @@
         private Label labBrand;
         private Label labCarList;
         private Label labReg;
-        private TextBox textBox1;
+        private TextBox txtCustName;
         private Panel panel1;
-        private ComboBox comboBox1;
+        private ComboBox cBoxReg;
         private TextBox txtFees;
-        private Button button4;
-        private Button button3;
-        private Button button1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private Label label5;
-        private Label label9;
+        private DateTimePicker datRent;
+        private DateTimePicker datReturn;
+        private Button btnClear;
+        private Button btnDelete;
+        private Button btnAdd;
     }
 }

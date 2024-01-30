@@ -31,12 +31,12 @@
             label1 = new Label();
             labAvailable = new Label();
             labModel = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            checkBox1 = new CheckBox();
+            txtUsername = new TextBox();
+            btnLogin = new Button();
+            chkShowPassword = new CheckBox();
             label2 = new Label();
             label3 = new Label();
+            txtPassword = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -72,52 +72,43 @@
             labModel.TabIndex = 17;
             labModel.Text = "UserName";
             // 
-            // textBox2
+            // txtUsername
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.ForeColor = Color.Crimson;
-            textBox2.Location = new Point(196, 173);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(323, 37);
-            textBox2.TabIndex = 18;
+            txtUsername.BackColor = Color.White;
+            txtUsername.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsername.ForeColor = Color.Crimson;
+            txtUsername.Location = new Point(196, 111);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(323, 37);
+            txtUsername.TabIndex = 0;
             // 
-            // textBox1
+            // btnLogin
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.Crimson;
-            textBox1.Location = new Point(196, 111);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(323, 37);
-            textBox1.TabIndex = 19;
+            btnLogin.BackColor = Color.Navy;
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(196, 264);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(323, 43);
+            btnLogin.TabIndex = 2;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // button1
+            // chkShowPassword
             // 
-            button1.BackColor = Color.Navy;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(196, 264);
-            button1.Name = "button1";
-            button1.Size = new Size(323, 43);
-            button1.TabIndex = 25;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            checkBox1.ForeColor = Color.MidnightBlue;
-            checkBox1.Location = new Point(196, 224);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(218, 34);
-            checkBox1.TabIndex = 26;
-            checkBox1.Text = "Show Password";
-            checkBox1.UseVisualStyleBackColor = true;
+            chkShowPassword.AutoSize = true;
+            chkShowPassword.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            chkShowPassword.ForeColor = Color.MidnightBlue;
+            chkShowPassword.Location = new Point(196, 224);
+            chkShowPassword.Name = "chkShowPassword";
+            chkShowPassword.Size = new Size(218, 34);
+            chkShowPassword.TabIndex = 26;
+            chkShowPassword.Text = "Show Password";
+            chkShowPassword.UseVisualStyleBackColor = true;
+            chkShowPassword.CheckedChanged += chkShowPassword_CheckedChanged;
             // 
             // label2
             // 
@@ -143,24 +134,36 @@
             label3.Text = "-";
             label3.Click += label1_Click;
             // 
+            // txtPassword
+            // 
+            txtPassword.BackColor = Color.White;
+            txtPassword.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.ForeColor = Color.Crimson;
+            txtPassword.Location = new Point(196, 174);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(323, 37);
+            txtPassword.TabIndex = 1;
+            // 
             // Login
             // 
+            AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(591, 371);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(checkBox1);
-            Controls.Add(button1);
+            Controls.Add(chkShowPassword);
+            Controls.Add(btnLogin);
             Controls.Add(labAvailable);
             Controls.Add(labModel);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUsername);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,11 +173,11 @@
         private Label label1;
         private Label labAvailable;
         private Label labModel;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Button button1;
-        private CheckBox checkBox1;
+        private TextBox txtUsername;
+        private Button btnLogin;
+        private CheckBox chkShowPassword;
         private Label label2;
         private Label label3;
+        private TextBox txtPassword;
     }
 }

@@ -158,39 +158,39 @@ namespace CarRentalManagementSystem
         {
             if (dgvCustomer.SelectedRows.Count > 0)
             {
-
                 DataGridViewRow selectedRow = dgvCustomer.SelectedRows[0];
-
 
                 if (selectedRow.Cells["CustId"].Value != null && int.TryParse(selectedRow.Cells["CustId"].Value.ToString(), out int customerId))
                 {
                     try
                     {
-
                         con.Open();
 
-
-                        string deleteQuery = "DELETE FROM CustomerTb1 WHERE CustId = @CustomerId";
-
-
-                        using (SqlCommand cmd = new SqlCommand(deleteQuery, con))
+                        if (HasAssociatedRentals(customerId))
                         {
-                            cmd.Parameters.AddWithValue("@CustomerId", customerId);
+                            MessageBox.Show("Cannot delete customer with associated rentals.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            
+                            string deleteQuery = "DELETE FROM CustomerTb1 WHERE CustId = @CustomerId";
 
-
-                            int rowsAffected = cmd.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
+                            using (SqlCommand cmd = new SqlCommand(deleteQuery, con))
                             {
-                                MessageBox.Show("Customer deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                cmd.Parameters.AddWithValue("@CustomerId", customerId);
 
+                                int rowsAffected = cmd.ExecuteNonQuery();
 
-                                con.Close();
-                                LoadCustomerData();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error deleting the customer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Customer deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    con.Close();
+                                    LoadCustomerData();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error deleting the customer.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
                     }
@@ -200,7 +200,6 @@ namespace CarRentalManagementSystem
                     }
                     finally
                     {
-
                         con.Close();
                     }
                 }
@@ -210,6 +209,19 @@ namespace CarRentalManagementSystem
                 MessageBox.Show("Please select a customer to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private bool HasAssociatedRentals(int customerId)
+        {
+            string query = "SELECT COUNT(*) FROM RentTb1 WHERE CustId = @CustomerId";
+
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                cmd.Parameters.AddWithValue("@CustomerId", customerId);
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                return count > 0;
+            }
+        }
+
         private void UpdateSelectedCustomer()
         {
             if (dgvCustomer.SelectedRows.Count > 0)
@@ -282,7 +294,7 @@ namespace CarRentalManagementSystem
                 txtAddress.Text = selectedRow.Cells["CustAdd"].Value.ToString();
 
 
-                string custPhone = selectedRow.Cells["CustPhone"].Value?.ToString();
+                string custPhone = selectedRow.Cells["CustPhone"].Value.ToString();
                 if (!string.IsNullOrEmpty(custPhone) && Regex.IsMatch(custPhone, @"^0[79]\d{8}$"))
                 {
                     txtPhone.Text = custPhone;

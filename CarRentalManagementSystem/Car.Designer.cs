@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            label6 = new Label();
-            label5 = new Label();
             panel2 = new Panel();
             labUser = new Label();
             labCarRental = new Label();
@@ -39,9 +40,9 @@
             pBoxCar = new PictureBox();
             txtRegNo = new TextBox();
             labReg = new Label();
-            textBox1 = new TextBox();
+            txtModel = new TextBox();
             labModel = new Label();
-            textBox3 = new TextBox();
+            txtColor = new TextBox();
             labColor = new Label();
             cBoxBrand = new ComboBox();
             labBrand = new Label();
@@ -60,11 +61,11 @@
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            dataGridView1 = new DataGridView();
-            button4 = new Button();
+            dgvCar = new DataGridView();
+            btnClear = new Button();
             button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            btnEdit = new Button();
+            btnAdd = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBoxCar).BeginInit();
@@ -73,13 +74,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCar).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(labUser);
             panel1.Controls.Add(labCarRental);
@@ -88,30 +87,8 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1053, 53);
+            panel1.Size = new Size(1323, 53);
             panel1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.MidnightBlue;
-            label6.Location = new Point(986, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(27, 34);
-            label6.TabIndex = 29;
-            label6.Text = "-";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.MidnightBlue;
-            label5.Location = new Point(1019, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(34, 34);
-            label5.TabIndex = 28;
-            label5.Text = "X";
             // 
             // panel2
             // 
@@ -125,11 +102,11 @@
             labUser.AutoSize = true;
             labUser.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point);
             labUser.ForeColor = Color.Crimson;
-            labUser.Location = new Point(770, 9);
+            labUser.Location = new Point(1168, 6);
             labUser.Name = "labUser";
-            labUser.Size = new Size(178, 39);
+            labUser.Size = new Size(85, 39);
             labUser.TabIndex = 1;
-            labUser.Text = "UserName";
+            labUser.Text = "Staff";
             // 
             // labCarRental
             // 
@@ -145,7 +122,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(701, 0);
+            pictureBox1.Location = new Point(1099, -3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 53);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -169,8 +146,8 @@
             txtRegNo.ForeColor = Color.Crimson;
             txtRegNo.Location = new Point(59, 188);
             txtRegNo.Name = "txtRegNo";
-            txtRegNo.Size = new Size(204, 37);
-            txtRegNo.TabIndex = 1;
+            txtRegNo.Size = new Size(360, 37);
+            txtRegNo.TabIndex = 0;
             // 
             // labReg
             // 
@@ -183,43 +160,43 @@
             labReg.TabIndex = 1;
             labReg.Text = "Reg Number";
             // 
-            // textBox1
+            // txtModel
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.Crimson;
-            textBox1.Location = new Point(739, 188);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(204, 37);
-            textBox1.TabIndex = 1;
+            txtModel.BackColor = Color.White;
+            txtModel.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtModel.ForeColor = Color.Crimson;
+            txtModel.Location = new Point(978, 188);
+            txtModel.Name = "txtModel";
+            txtModel.Size = new Size(316, 37);
+            txtModel.TabIndex = 2;
             // 
             // labModel
             // 
             labModel.AutoSize = true;
             labModel.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labModel.ForeColor = Color.Crimson;
-            labModel.Location = new Point(739, 138);
+            labModel.Location = new Point(978, 138);
             labModel.Name = "labModel";
             labModel.Size = new Size(101, 34);
             labModel.TabIndex = 1;
             labModel.Text = "Model";
             // 
-            // textBox3
+            // txtColor
             // 
-            textBox3.BackColor = Color.White;
-            textBox3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.ForeColor = Color.Crimson;
-            textBox3.Location = new Point(388, 291);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(204, 37);
-            textBox3.TabIndex = 1;
+            txtColor.BackColor = Color.White;
+            txtColor.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtColor.ForeColor = Color.Crimson;
+            txtColor.Location = new Point(544, 292);
+            txtColor.Name = "txtColor";
+            txtColor.Size = new Size(378, 37);
+            txtColor.TabIndex = 4;
             // 
             // labColor
             // 
             labColor.AutoSize = true;
             labColor.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labColor.ForeColor = Color.Crimson;
-            labColor.Location = new Point(388, 241);
+            labColor.Location = new Point(544, 242);
             labColor.Name = "labColor";
             labColor.Size = new Size(88, 34);
             labColor.TabIndex = 1;
@@ -227,19 +204,23 @@
             // 
             // cBoxBrand
             // 
+            cBoxBrand.DropDownHeight = 300;
             cBoxBrand.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cBoxBrand.FormattingEnabled = true;
-            cBoxBrand.Location = new Point(388, 187);
+            cBoxBrand.IntegralHeight = false;
+            cBoxBrand.Items.AddRange(new object[] { "Audi", "BMW", "Buick", "Cadillac", "Chevrolet", "Chrysler", "Dodge", "Ferrari", "Ford", "GM", "GEM", "GMC", "Honda", "Hummer", "Hyundai", "Infiniti", "Isuzu", "Jaguar", "Jeep", "Kia", "Lamborghini", "Land Rover", "Lexus", "Lincoln", "Lotus", "Mazda", "Mercedes-Benz", "Mercury", "Mitsubishi", "Nissan", "Oldsmobile", "Peugeot", "Pontiac", "Porsche", "Regal", "Saab", "Saturn", "Subaru", "Suzuki", "Toyota", "Volkswagen", "Volvo" });
+            cBoxBrand.Location = new Point(544, 188);
+            cBoxBrand.MaxDropDownItems = 5;
             cBoxBrand.Name = "cBoxBrand";
-            cBoxBrand.Size = new Size(204, 38);
-            cBoxBrand.TabIndex = 2;
+            cBoxBrand.Size = new Size(378, 38);
+            cBoxBrand.TabIndex = 1;
             // 
             // labBrand
             // 
             labBrand.AutoSize = true;
             labBrand.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labBrand.ForeColor = Color.Crimson;
-            labBrand.Location = new Point(388, 137);
+            labBrand.Location = new Point(544, 138);
             labBrand.Name = "labBrand";
             labBrand.Size = new Size(94, 34);
             labBrand.TabIndex = 1;
@@ -250,7 +231,7 @@
             labAvailable.AutoSize = true;
             labAvailable.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labAvailable.ForeColor = Color.Crimson;
-            labAvailable.Location = new Point(739, 241);
+            labAvailable.Location = new Point(978, 241);
             labAvailable.Name = "labAvailable";
             labAvailable.Size = new Size(147, 34);
             labAvailable.TabIndex = 1;
@@ -260,10 +241,11 @@
             // 
             cBoxAvailable.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cBoxAvailable.FormattingEnabled = true;
-            cBoxAvailable.Location = new Point(739, 291);
+            cBoxAvailable.Items.AddRange(new object[] { "Yes", "No" });
+            cBoxAvailable.Location = new Point(978, 291);
             cBoxAvailable.Name = "cBoxAvailable";
-            cBoxAvailable.Size = new Size(204, 38);
-            cBoxAvailable.TabIndex = 2;
+            cBoxAvailable.Size = new Size(316, 38);
+            cBoxAvailable.TabIndex = 5;
             // 
             // txtPrice
             // 
@@ -272,8 +254,9 @@
             txtPrice.ForeColor = Color.Crimson;
             txtPrice.Location = new Point(59, 282);
             txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(204, 37);
-            txtPrice.TabIndex = 1;
+            txtPrice.Size = new Size(360, 37);
+            txtPrice.TabIndex = 3;
+            txtPrice.TextAlign = HorizontalAlignment.Right;
             // 
             // labPrice
             // 
@@ -291,7 +274,7 @@
             labCarList.AutoSize = true;
             labCarList.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             labCarList.ForeColor = Color.Crimson;
-            labCarList.Location = new Point(423, 424);
+            labCarList.Location = new Point(544, 424);
             labCarList.Name = "labCarList";
             labCarList.Size = new Size(144, 43);
             labCarList.TabIndex = 1;
@@ -311,13 +294,13 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 53);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1053, 72);
+            panel3.Size = new Size(1323, 72);
             panel3.TabIndex = 3;
             // 
             // panel4
             // 
             panel4.BackColor = Color.DarkBlue;
-            panel4.Location = new Point(101, 40);
+            panel4.Location = new Point(201, 40);
             panel4.Name = "panel4";
             panel4.Size = new Size(125, 5);
             panel4.TabIndex = 4;
@@ -327,7 +310,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Crimson;
-            label4.Location = new Point(810, 6);
+            label4.Location = new Point(910, 6);
             label4.Name = "label4";
             label4.Size = new Size(100, 34);
             label4.TabIndex = 1;
@@ -338,7 +321,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Crimson;
-            label3.Location = new Point(604, 9);
+            label3.Location = new Point(704, 9);
             label3.Name = "label3";
             label3.Size = new Size(74, 34);
             label3.TabIndex = 1;
@@ -349,7 +332,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Crimson;
-            label2.Location = new Point(340, 6);
+            label2.Location = new Point(440, 6);
             label2.Name = "label2";
             label2.Size = new Size(157, 34);
             label2.TabIndex = 1;
@@ -360,7 +343,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Crimson;
-            label1.Location = new Point(150, 3);
+            label1.Location = new Point(250, 3);
             label1.Name = "label1";
             label1.Size = new Size(76, 34);
             label1.TabIndex = 1;
@@ -369,7 +352,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(761, 3);
+            pictureBox5.Location = new Point(861, 3);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(53, 37);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -379,7 +362,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(555, 6);
+            pictureBox4.Location = new Point(655, 6);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(53, 37);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -389,7 +372,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(292, 3);
+            pictureBox3.Location = new Point(392, 3);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(53, 37);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -399,38 +382,70 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(101, 0);
+            pictureBox2.Location = new Point(201, 0);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(53, 37);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // dataGridView1
+            // dgvCar
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(36, 470);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(989, 255);
-            dataGridView1.TabIndex = 4;
+            dgvCar.AllowUserToAddRows = false;
+            dgvCar.AllowUserToDeleteRows = false;
+            dgvCar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCar.BackgroundColor = Color.White;
+            dgvCar.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Crimson;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCar.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvCar.Location = new Point(12, 470);
+            dgvCar.MultiSelect = false;
+            dgvCar.Name = "dgvCar";
+            dgvCar.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Crimson;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvCar.RowHeadersWidth = 62;
+            dgvCar.RowTemplate.Height = 33;
+            dgvCar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCar.Size = new Size(1299, 359);
+            dgvCar.TabIndex = 4;
+            dgvCar.CellMouseClick += dgvCar_CellMouseClick;
             // 
-            // button4
+            // btnClear
             // 
-            button4.BackColor = Color.Navy;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(677, 348);
-            button4.Name = "button4";
-            button4.Size = new Size(113, 43);
-            button4.TabIndex = 25;
-            button4.Text = "Clear";
-            button4.UseVisualStyleBackColor = false;
+            btnClear.BackColor = Color.Navy;
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(792, 353);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(113, 43);
+            btnClear.TabIndex = 9;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // button3
             // 
@@ -439,53 +454,56 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(521, 348);
+            button3.Location = new Point(636, 353);
             button3.Name = "button3";
             button3.Size = new Size(135, 43);
-            button3.TabIndex = 26;
+            button3.TabIndex = 8;
             button3.Text = "Delete";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
-            // button2
+            // btnEdit
             // 
-            button2.BackColor = Color.Navy;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(389, 348);
-            button2.Name = "button2";
-            button2.Size = new Size(113, 43);
-            button2.TabIndex = 27;
-            button2.Text = "Edit";
-            button2.UseVisualStyleBackColor = false;
+            btnEdit.BackColor = Color.Navy;
+            btnEdit.FlatAppearance.BorderSize = 0;
+            btnEdit.FlatStyle = FlatStyle.Flat;
+            btnEdit.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(504, 353);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(113, 43);
+            btnEdit.TabIndex = 7;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += button2_Click;
             // 
-            // button1
+            // btnAdd
             // 
-            button1.BackColor = Color.Navy;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(246, 348);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 43);
-            button1.TabIndex = 28;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnAdd.BackColor = Color.Navy;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(361, 353);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(113, 43);
+            btnAdd.TabIndex = 6;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += button1_Click;
             // 
             // frmMain
             // 
+            AcceptButton = btnAdd;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1053, 746);
-            Controls.Add(button4);
+            ClientSize = new Size(1323, 841);
+            Controls.Add(btnClear);
             Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnEdit);
+            Controls.Add(btnAdd);
+            Controls.Add(dgvCar);
             Controls.Add(panel3);
             Controls.Add(cBoxAvailable);
             Controls.Add(cBoxBrand);
@@ -497,14 +515,14 @@
             Controls.Add(labCarList);
             Controls.Add(labReg);
             Controls.Add(txtPrice);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
+            Controls.Add(txtColor);
+            Controls.Add(txtModel);
             Controls.Add(txtRegNo);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main";
+            Load += frmMain_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -515,7 +533,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -529,9 +547,9 @@
         private Label labUser;
         private TextBox txtRegNo;
         private Label labReg;
-        private TextBox textBox1;
+        private TextBox txtModel;
         private Label labModel;
-        private TextBox textBox3;
+        private TextBox txtColor;
         private Label labColor;
         private ComboBox cBoxBrand;
         private Label labBrand;
@@ -551,12 +569,10 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
-        private DataGridView dataGridView1;
-        private Button button4;
+        private DataGridView dgvCar;
+        private Button btnClear;
         private Button button3;
-        private Button button2;
-        private Button button1;
-        private Label label5;
-        private Label label6;
+        private Button btnEdit;
+        private Button btnAdd;
     }
 }

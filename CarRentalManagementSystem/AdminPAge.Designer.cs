@@ -29,155 +29,123 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPAge));
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            btnClear = new Button();
+            btnDelete = new Button();
+            btnEdit = new Button();
+            btnAdd = new Button();
             panel3 = new Panel();
-            pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
-            label1 = new Label();
             panel6 = new Panel();
             label3 = new Label();
             labAvailable = new Label();
             labModel = new Label();
             labCarList = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtPassword = new TextBox();
+            txtEmployee = new TextBox();
             panel1 = new Panel();
-            label4 = new Label();
-            label2 = new Label();
             panel2 = new Panel();
             labUser = new Label();
             labCarRental = new Label();
             pictureBox1 = new PictureBox();
             pBoxCar = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dgvEmployee = new DataGridView();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pBoxCar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmployee).BeginInit();
             SuspendLayout();
             // 
-            // button4
+            // btnClear
             // 
-            button4.BackColor = Color.Navy;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(667, 271);
-            button4.Name = "button4";
-            button4.Size = new Size(113, 43);
-            button4.TabIndex = 40;
-            button4.Text = "Clear";
-            button4.UseVisualStyleBackColor = false;
+            btnClear.BackColor = Color.Navy;
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(811, 271);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(113, 43);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
-            // button3
+            // btnDelete
             // 
-            button3.BackColor = Color.Navy;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(511, 271);
-            button3.Name = "button3";
-            button3.Size = new Size(135, 43);
-            button3.TabIndex = 41;
-            button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = Color.Navy;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(655, 271);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(135, 43);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // button2
+            // btnEdit
             // 
-            button2.BackColor = Color.Navy;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(379, 271);
-            button2.Name = "button2";
-            button2.Size = new Size(113, 43);
-            button2.TabIndex = 42;
-            button2.Text = "Edit";
-            button2.UseVisualStyleBackColor = false;
+            btnEdit.BackColor = Color.Navy;
+            btnEdit.FlatAppearance.BorderSize = 0;
+            btnEdit.FlatStyle = FlatStyle.Flat;
+            btnEdit.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(523, 271);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(113, 43);
+            btnEdit.TabIndex = 3;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
-            // button1
+            // btnAdd
             // 
-            button1.BackColor = Color.Navy;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(236, 271);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 43);
-            button1.TabIndex = 43;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(54, 373);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(968, 343);
-            dataGridView1.TabIndex = 39;
+            btnAdd.BackColor = Color.Navy;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(380, 271);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(113, 43);
+            btnAdd.TabIndex = 2;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
             // panel3
             // 
-            panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(label1);
             panel3.Controls.Add(panel6);
             panel3.Controls.Add(label3);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 53);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1053, 72);
+            panel3.Size = new Size(1323, 72);
             panel3.TabIndex = 38;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(847, 14);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(59, 46);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 5;
-            pictureBox3.TabStop = false;
+            panel3.Paint += panel3_Paint;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(361, 3);
+            pictureBox2.Location = new Point(547, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(59, 46);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Crimson;
-            label1.Location = new Point(902, 26);
-            label1.Name = "label1";
-            label1.Size = new Size(106, 34);
-            label1.TabIndex = 1;
-            label1.Text = "Logout";
-            // 
             // panel6
             // 
             panel6.BackColor = Color.DarkBlue;
-            panel6.Location = new Point(361, 55);
+            panel6.Location = new Point(547, 55);
             panel6.Name = "panel6";
             panel6.Size = new Size(210, 5);
             panel6.TabIndex = 4;
@@ -187,7 +155,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Crimson;
-            label3.Location = new Point(416, 15);
+            label3.Location = new Point(602, 15);
             label3.Name = "label3";
             label3.Size = new Size(163, 34);
             label3.TabIndex = 1;
@@ -198,7 +166,7 @@
             labAvailable.AutoSize = true;
             labAvailable.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labAvailable.ForeColor = Color.Crimson;
-            labAvailable.Location = new Point(547, 159);
+            labAvailable.Location = new Point(703, 159);
             labAvailable.Name = "labAvailable";
             labAvailable.Size = new Size(142, 34);
             labAvailable.TabIndex = 29;
@@ -209,7 +177,7 @@
             labModel.AutoSize = true;
             labModel.Font = new Font("Century Gothic", 14F, FontStyle.Regular, GraphicsUnit.Point);
             labModel.ForeColor = Color.Crimson;
-            labModel.Location = new Point(205, 159);
+            labModel.Location = new Point(36, 159);
             labModel.Name = "labModel";
             labModel.Size = new Size(242, 34);
             labModel.TabIndex = 30;
@@ -220,36 +188,34 @@
             labCarList.AutoSize = true;
             labCarList.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             labCarList.ForeColor = Color.Crimson;
-            labCarList.Location = new Point(383, 317);
+            labCarList.Location = new Point(527, 317);
             labCarList.Name = "labCarList";
             labCarList.Size = new Size(268, 43);
             labCarList.TabIndex = 32;
             labCarList.Text = "Employees List";
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.BackColor = Color.White;
-            textBox2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.ForeColor = Color.Crimson;
-            textBox2.Location = new Point(547, 209);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(238, 37);
-            textBox2.TabIndex = 34;
+            txtPassword.BackColor = Color.White;
+            txtPassword.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.ForeColor = Color.Crimson;
+            txtPassword.Location = new Point(703, 209);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(560, 37);
+            txtPassword.TabIndex = 1;
             // 
-            // textBox1
+            // txtEmployee
             // 
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.ForeColor = Color.Crimson;
-            textBox1.Location = new Point(205, 209);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(238, 37);
-            textBox1.TabIndex = 35;
+            txtEmployee.BackColor = Color.White;
+            txtEmployee.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmployee.ForeColor = Color.Crimson;
+            txtEmployee.Location = new Point(36, 209);
+            txtEmployee.Name = "txtEmployee";
+            txtEmployee.Size = new Size(549, 37);
+            txtEmployee.TabIndex = 0;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label2);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(labUser);
             panel1.Controls.Add(labCarRental);
@@ -258,30 +224,8 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1053, 53);
+            panel1.Size = new Size(1323, 53);
             panel1.TabIndex = 26;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.MidnightBlue;
-            label4.Location = new Point(981, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(27, 34);
-            label4.TabIndex = 29;
-            label4.Text = "-";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.MidnightBlue;
-            label2.Location = new Point(1019, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(34, 34);
-            label2.TabIndex = 28;
-            label2.Text = "X";
             // 
             // panel2
             // 
@@ -295,7 +239,7 @@
             labUser.AutoSize = true;
             labUser.Font = new Font("Century Gothic", 16F, FontStyle.Regular, GraphicsUnit.Point);
             labUser.ForeColor = Color.MidnightBlue;
-            labUser.Location = new Point(770, 9);
+            labUser.Location = new Point(1106, 12);
             labUser.Name = "labUser";
             labUser.Size = new Size(119, 39);
             labUser.TabIndex = 1;
@@ -315,7 +259,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(701, 0);
+            pictureBox1.Location = new Point(1037, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 53);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -332,55 +276,96 @@
             pBoxCar.TabIndex = 1;
             pBoxCar.TabStop = false;
             // 
+            // dgvEmployee
+            // 
+            dgvEmployee.AllowUserToAddRows = false;
+            dgvEmployee.AllowUserToDeleteRows = false;
+            dgvEmployee.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEmployee.BackgroundColor = Color.White;
+            dgvEmployee.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Crimson;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvEmployee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.AliceBlue;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvEmployee.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvEmployee.Location = new Point(12, 363);
+            dgvEmployee.MultiSelect = false;
+            dgvEmployee.Name = "dgvEmployee";
+            dgvEmployee.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Crimson;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvEmployee.RowHeadersWidth = 62;
+            dgvEmployee.RowTemplate.Height = 33;
+            dgvEmployee.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEmployee.Size = new Size(1299, 466);
+            dgvEmployee.TabIndex = 44;
+            dgvEmployee.SelectionChanged += dgvEmployee_SelectionChanged;
+            // 
             // AdminPAge
             // 
+            AcceptButton = btnAdd;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1053, 746);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1323, 841);
+            Controls.Add(dgvEmployee);
+            Controls.Add(btnClear);
+            Controls.Add(btnDelete);
+            Controls.Add(btnEdit);
+            Controls.Add(btnAdd);
             Controls.Add(panel3);
             Controls.Add(labAvailable);
             Controls.Add(labModel);
             Controls.Add(labCarList);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtEmployee);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "AdminPAge";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminPage";
             Load += AdminPAge_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pBoxCar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmployee).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private DataGridView dataGridView1;
+        private Button btnClear;
+        private Button btnDelete;
+        private Button btnEdit;
+        private Button btnAdd;
         private Panel panel3;
         private Panel panel6;
         private Label label3;
         private Label labAvailable;
         private Label labModel;
         private Label labCarList;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtPassword;
+        private TextBox txtEmployee;
         private Panel panel1;
         private Panel panel2;
         private Label labUser;
@@ -388,9 +373,6 @@
         private PictureBox pictureBox1;
         private PictureBox pBoxCar;
         private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private Label label1;
-        private Label label2;
-        private Label label4;
+        private DataGridView dgvEmployee;
     }
 }

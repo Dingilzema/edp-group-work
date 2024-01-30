@@ -6,10 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <StartupObject>CarRentalManagementSystem.Program</StartupObject>
+    <AssemblyName>CarRentalManagementSystem</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CircularProgressBar_NET5" Version="3.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
